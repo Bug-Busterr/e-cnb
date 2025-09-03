@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const connectToDataBase = () => {
+const dbConnect = () => {
   return new Promise((res, rej) => {
     mongoose
       .connect(process.env.MONGODB_URL)
@@ -14,13 +14,4 @@ export const connectToDataBase = () => {
   });
 };
 
-
-export async function disconnectFromDataBase(){
-    try{
-        await mongoose.connection.close();
-        console.log('Database disconnected successfully');
-    } catch(err) {
-        console.error('Error disconnecting from database:', err);
-        throw err;
-    }
-}
+export default dbConnect;
