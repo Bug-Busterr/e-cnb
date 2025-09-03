@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connectToDataBase = () => {
+export const connectToDataBase = () => {
   return new Promise((res, rej) => {
     mongoose
       .connect(process.env.MONGODB_URL)
@@ -13,8 +13,6 @@ const connectToDataBase = () => {
       });
   });
 };
-
-export default dbConnect;
 
 
 export async function disconnectFromDataBase(){
