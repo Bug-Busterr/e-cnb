@@ -12,7 +12,7 @@
             "dest": "/server.js"
         }
     ],
-    "buildCommand": "npm run dev",
+    "buildCommand": "npm run run:dev",
     "installCommand": "npm install",
     "framework": "express"
 }
