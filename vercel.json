@@ -2,23 +2,17 @@
     "version": 2,
     "builds": [
         {
-            "src": "./server.js",
+            "src": "./app.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/server.js"
+            "dest": "/app.js"
         }
     ],
-    "env": {
-        "NODE_ENV": "production"
-    },
-    "functions": {
-        "server.js": {
-            "maxDuration": 60
-        }
-    },
-    "regions": ["iad1"]
+    "buildCommand": "npm run dev",
+    "installCommand": "npm install",
+    "framework": "express"
 }
